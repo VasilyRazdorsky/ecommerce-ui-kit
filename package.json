@@ -1,0 +1,50 @@
+{
+	"name": "ecommerce-ui-kit",
+	"version": "0.0.7",
+	"type": "module",
+	"main": "./dist/ecommerce-ui-kit.umd.cjs",
+	"module": "./dist/ecommerce-ui-kit.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build && vue-tsc --emitDeclarationOnly",
+		"preview": "vite preview",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/ecommerce-ui-kit.js",
+			"require": "./dist/ecommerce-ui-kit.umd.cjs"
+		},
+		"./style.css": "./dist/style.css"
+	},
+	"dependencies": {
+		"vue": "^3.2.47"
+	},
+	"devDependencies": {
+		"@storybook/addon-essentials": "^7.6.17",
+		"@storybook/addon-interactions": "^7.6.17",
+		"@storybook/addon-links": "^7.6.17",
+		"@storybook/blocks": "^7.6.17",
+		"@storybook/test": "^7.6.17",
+		"@storybook/vue3": "^7.6.17",
+		"@storybook/vue3-vite": "^7.6.17",
+		"@types/node": "^20.11.20",
+		"@vitejs/plugin-vue": "^5.0.4",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"storybook": "^7.6.17",
+		"typescript": "^5.2.2",
+		"vite": "^5.1.4",
+		"vite-plugin-dts": "^3.7.3",
+		"vue": "^3.4.19",
+		"vue-tsc": "^1.8.27"
+	},
+	"peerDependencies": {
+		"vue": ">=3"
+	}
+}
