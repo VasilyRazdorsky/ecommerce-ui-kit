@@ -1,5 +1,6 @@
 <script lang="ts">
 import { PropType, defineComponent } from 'vue';
+import '../../style.css';
 
 type ButtonSizes = 'small' | 'medium' | 'large';
 type ButtonColors = 'primary' | 'secondary';
@@ -18,6 +19,9 @@ export default defineComponent({
 			type: String as PropType<ButtonColors>,
 			default: 'primary',
 		},
+		className: {
+			type: String,
+		},
 	},
 	data() {
 		return {};
@@ -26,7 +30,11 @@ export default defineComponent({
 </script>
 
 <template>
-	<button class="button" :class="[size, color]" :disabled="disabled">
+	<button
+		class="button"
+		:class="[size, color, disabled && 'disabled', className && className]"
+		:disabled="disabled"
+	>
 		<slot />
 	</button>
 </template>
@@ -36,35 +44,52 @@ export default defineComponent({
 	color: #ffffff;
 	outline: none;
 	border: none;
-	padding: 0 16px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	border-radius: 12px;
 	cursor: pointer;
 	transition: opacity 0.2s ease-in;
 }
 
 .button:hover {
-	opacity: 0.9;
+	opacity: 0.8;
 }
-
-.small {
-	height: 32px;
-	border-radius: 8px;
-}
-
-.medium {
-	height: 36px;
-	border-radius: 10px;
-}
-
-.large {
-	height: 40px;
-	border-radius: 12px;
-}
-
 .primary {
-	background: green;
+	background: var(--primary-500);
+	border: 1px solid var(--primary-500);
 }
 
 .secondary {
-	background: #a7a7a7;
+	color: var(--gray-700);
+	border: 1px solid var(--gray-300);
+	background-color: #fff;
+}
+
+.disabled {
+	color: #fff;
+	background-color: var(--gray-300);
+	border-color: var(--gray-300);
+	opacity: 0.8;
+	pointer-events: none;
+}
+
+.small {
+	padding: 8px 16px;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+}
+
+.medium {
+	padding: 12px 20px;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.large {
+	padding: 14px 26px;
+	font-size: 18px;
+	line-height: 22px;
 }
 </style>

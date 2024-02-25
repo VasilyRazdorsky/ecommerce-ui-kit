@@ -19,6 +19,9 @@ export default {
 			options: ['primary', 'secondary'],
 			defaultValue: 'primary',
 		},
+		className: {
+			defaultValue: '',
+		},
 	},
 } as Meta<typeof DSButton>;
 
@@ -28,7 +31,7 @@ const Template: StoryFn<typeof DSButton> = (args) => ({
 		return { args };
 	},
 	template: `
-      <div style="display: flex; flex-direction: row; gap: 12px;">
+      <div style="display: flex; flex-direction: row; gap: 12px; align-items: flex-end">
         <DSButton v-bind="args" size="large">Button</DSButton>
         <DSButton v-bind="args" size="medium">Button</DSButton>
         <DSButton v-bind="args" size="small">Button</DSButton>
