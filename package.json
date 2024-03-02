@@ -1,6 +1,6 @@
 {
 	"name": "ecommerce-ui-kit",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"type": "module",
 	"main": "./dist/ecommerce-ui-kit.umd.cjs",
 	"module": "./dist/ecommerce-ui-kit.js",
