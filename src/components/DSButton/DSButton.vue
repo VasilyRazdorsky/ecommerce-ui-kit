@@ -32,8 +32,9 @@ export default defineComponent({
 <template>
 	<button
 		class="button"
-		:class="[size, color, disabled && 'disabled', className && className]"
+		:class="[size, color, disabled && 'disabled', className]"
 		:disabled="disabled"
+		@click="() => console.log('click')"
 	>
 		<slot />
 	</button>
@@ -67,11 +68,16 @@ export default defineComponent({
 }
 
 .disabled {
-	color: #fff;
+	color: #000;
 	background-color: var(--gray-300);
 	border-color: var(--gray-300);
-	opacity: 0.8;
-	pointer-events: none;
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: visible;
+}
+
+.disabled:hover {
+	opacity: 0.5;
 }
 
 .small {

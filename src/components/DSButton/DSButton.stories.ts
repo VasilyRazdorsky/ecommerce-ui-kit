@@ -47,6 +47,9 @@ export const DefaultButton: StoryFn<typeof DSButton> = (args) => ({
 	template: '<DSButton v-bind="args">Button</DSButton>',
 });
 
+export const DisabledButton = Template.bind({});
+DisabledButton.args = { disabled: true };
+
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = { color: 'primary' };
 
